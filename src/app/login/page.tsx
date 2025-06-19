@@ -20,7 +20,7 @@ export default function LoginPage() {
       Cookies.set('token', data.token, { expires: 7 })
       toast.success('Login successful')
       router.push('/dashboard')
-    } catch (error) {
+    } catch {
       toast.error('Invalid credentials')
     } finally {
       setIsLoading(false)

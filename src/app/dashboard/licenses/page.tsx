@@ -5,16 +5,7 @@ import Cookies from 'js-cookie'
 import toast from 'react-hot-toast'
 import { format } from 'date-fns'
 import { getLicenses, revokeLicense } from '@/lib/api'
-
-interface License {
-  key: string
-  createdAt: string
-  expiresAt: string
-  isRevoked: boolean
-  isValid: boolean
-  machineId?: string
-  lastCheckedAt?: string
-}
+import type { License } from '../types'
 
 export default function LicensesPage() {
   const [licenses, setLicenses] = useState<License[]>([])
@@ -30,7 +21,7 @@ export default function LicensesPage() {
       }
       const data = await getLicenses(token)
       setLicenses(data)
-    } catch (error) {
+    } catch {
       toast.error('Failed to fetch licenses')
     } finally {
       setIsLoading(false)
@@ -44,7 +35,7 @@ export default function LicensesPage() {
       await revokeLicense(token, key)
       toast.success('License revoked successfully')
       fetchLicenses()
-    } catch (error) {
+    } catch {
       toast.error('Failed to revoke license')
     }
   }

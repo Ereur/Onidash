@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
 import { getLicenses } from '@/lib/api'
+import type { License } from './types'
 
 interface LicenseStats {
   total: number
@@ -30,7 +31,7 @@ export default function DashboardPage() {
         console.log("re:",licenses)
         const now = new Date()
         const stats = licenses.reduce(
-          (acc: LicenseStats, license: any) => {
+          (acc: LicenseStats, license: License) => {
             acc.total++
             if (license.isRevoked) {
               acc.revoked++

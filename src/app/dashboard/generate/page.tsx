@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import toast from 'react-hot-toast'
-import { format, addYears, endOfDay } from 'date-fns'
+import { endOfDay } from 'date-fns'
 import Cookies from 'js-cookie'
 import { generateLicense } from '@/lib/api'
 
@@ -78,7 +78,7 @@ export default function GeneratePage() {
           <div className="mt-6">
             <h3 className="text-white font-semibold mb-2">Generated Keys</h3>
             <ul className="space-y-2">
-              {generatedLicenses.map((key, idx) => (
+              {generatedLicenses.map((key) => (
                 <li
                   key={key}
                   className="bg-[#23201c] rounded-lg px-4 py-2 flex items-center justify-between text-white"
