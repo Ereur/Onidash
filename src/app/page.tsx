@@ -3,8 +3,8 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-const MAC_DOWNLOAD = '/my-app/release/onidash-1.0.0-arm64-mac.zip'
-const WIN_DOWNLOAD = '#'
+const MAC_DOWNLOAD = 'https://github.com/Ereur/Onidash/releases/download/v1.0.0/onidash-1.0.0-arm64-mac.zip'
+const WIN_DOWNLOAD = 'https://github.com/Ereur/Onidash/releases/download/v1.0.0/onidash-1.0.0-win.zip'
 const ICON_SRC = '/128x128.png'
 const PASSWORD = 'onidash2024onidash2024'
 
@@ -94,11 +94,11 @@ export default function LandingPage() {
             </a>
             <a
               href={WIN_DOWNLOAD}
-              className="w-full bg-[#23201c] border border-[#ff8800] hover:bg-[#ff8800] hover:text-white text-[#ff8800] font-bold py-2 rounded-lg shadow text-center transition cursor-not-allowed"
-              tabIndex={-1}
-              aria-disabled="true"
+              className="w-full bg-[#23201c] border border-[#ff8800] hover:bg-[#ff8800] hover:text-white text-[#ff8800] font-bold py-2 rounded-lg shadow text-center transition "
+              // tabIndex={-1}
+              // aria-disabled="true"
             >
-              Download for Windows (coming soon)
+              Download for Windows
             </a>
           </div>
         )}
