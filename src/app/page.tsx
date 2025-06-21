@@ -6,7 +6,7 @@ import Image from 'next/image'
 const MAC_DOWNLOAD = 'https://github.com/Ereur/Onidash/releases/download/v1.0.0/onidash-1.0.0-arm64-mac.zip'
 const WIN_DOWNLOAD = 'https://github.com/Ereur/Onidash/releases/download/v1.0.0/onidash-1.0.0-win.zip'
 const ICON_SRC = '/128x128.png'
-const PASSWORD = 'onidash2024onidash2024'
+const PASSWORD = process.env.NEXT_PUBLIC_PASSWORD
 
 const FEATURES = [
   {
